@@ -1,48 +1,41 @@
 import React from 'react';
 import Link from 'next/link';
 
-export default function MainContent() {
+export default async function MainContent() {
   return (
-    <section>
-      <div className="mx-auto max-w-screen-2xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:h-screen lg:grid-cols-2">
-          <div className="relative z-10 lg:py-16">
-            <div className="relative h-64 sm:h-80 lg:h-full">
-              <img
-                alt="House"
-                src="https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-                className="absolute inset-0 h-full w-full object-cover"
-              />
-            </div>
-          </div>
+    <section className="bg-gray-50">
+      <div
+        className="mx-auto max-w-screen-xl px-4 py-32"
+      >
+        <div className="mx-auto max-w-xl text-center">
+          <h1 className="text-3xl font-extrabold sm:text-5xl">
+            Streamline Your Success
+            <strong className="font-extrabold text-cyan-700 sm:block">
+              with Echon Services
+            </strong>
+          </h1>
 
-      <div className="relative flex items-center bg-gray-100">
-        <span
-          className="hidden lg:absolute lg:inset-y-0 lg:-start-16 lg:block lg:w-16 lg:bg-gray-100"
-        ></span>
-
-        <div className="p-8 sm:p-16 lg:p-24">
-          <h2 className="text-2xl font-bold sm:text-3xl">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore,
-            debitis.
-          </h2>
-
-          <p className="mt-4 text-gray-600">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid,
-            molestiae! Quidem est esse numquam odio deleniti, beatae, magni
-            dolores provident quaerat totam eos, aperiam architecto eius quis
-            quibusdam fugiat dicta.
+          <p className="mt-4 sm:text-xl/relaxed">
+            Your one-stop digital hub for transforming everyday tasks into opportunities for growth and efficiency
           </p>
 
-          <a
-            href="#"
-            className="mt-8 inline-block rounded border border-indigo-600 bg-indigo-600 px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-indigo-600 focus:outline-none focus:ring active:text-indigo-500"
-          >
-            Get in Touch
-          </a>
+          <div className="mt-8 flex flex-wrap justify-center gap-4">
+            <Link
+              className="block w-full rounded bg-cyan-600 px-12 py-3 text-sm font-medium text-white shadow hover:bg-cyan-700 focus:outline-none focus:ring active:bg-cyan-500 sm:w-auto"
+              href="/get-started"
+            >
+              Get Started
+            </Link>
+
+            <Link
+              className="block w-full rounded px-12 py-3 text-sm font-medium text-cyan-600 shadow hover:text-cyan-700 focus:outline-none focus:ring active:text-cyan-500 sm:w-auto"
+              href="/about"
+            >
+              Learn More
+            </Link>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>  );
+    </section>
+  );
 }

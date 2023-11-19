@@ -5,7 +5,7 @@ import DiscordButton from '../_components/branded/discord-button';
 import { redirectWhenAuthenticated } from '../../hooks/useAuthNotRequired';
 
 async function Register() {
-  await redirectWhenAuthenticated({ to: '/' });
+  await redirectWhenAuthenticated({ to: '/products' });
 
   return (
     <section className="bg-white">

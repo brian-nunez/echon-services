@@ -61,7 +61,6 @@ model User {
     image         String?
     accounts      Account[]
     sessions      Session[]
-    posts         Post[]
 }
 
 model VerificationToken {
@@ -71,3 +70,9 @@ model VerificationToken {
 
     @@unique([identifier, token])
 }
+
+model EmailSubscription {
+    id        Int      @id @default(autoincrement())
+    email String @unique
+}
+

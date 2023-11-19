@@ -1,20 +1,19 @@
 import React from 'react';
-import { getServerAuthSession } from "~/server/auth";
 import TopBar from './_components/topbar';
 import Footer from './_components/footer';
-import Card from './_components/card';
-import Link from 'next/link';
 import MainContent from './_components/main-page-content';
+import EmailSubscription, { getEmailSubscriptionMessage } from './_components/email-subscription';
+import { ToastProvider } from './_components/toast-provider';
 
-export default async function Home() {
-  const session = await getServerAuthSession();
-
+export default async function Home({ searchParams }) {
+  const initialToastMessage = getEmailSubscriptionMessage(searchParams.esub);
   return (
-    <React.Fragment>
+    <ToastProvider initialToastProps={{ message: initialToastMessage }}>
       <TopBar />
       <MainContent />
+      <EmailSubscription />
       <Footer />
-    </React.Fragment>
+    </ToastProvider>
   );
 }
 
